@@ -3,6 +3,7 @@ from sim_f import *
 from experiment import *
 import matplotlib.pyplot as plt
 from round_to_fit import *
+import os
 
 def round_to_fit(n, digits):
     """
@@ -21,7 +22,7 @@ def round_to_fit(n, digits):
 # We got the code relating to the time module from Chat-GPT
 start_time = time.time()
 
-num_experiments = 10**2
+num_experiments = 10**3
 num_plots       = 8
 
 bulb_vector = [2, 10**1, 10**2, 10**3, 10**4]
@@ -119,5 +120,6 @@ plt.ylabel("f(k)")
 plt.legend()
 plt.title("Simulated and theoretical results of f")
 plt.grid(True)
+os.makedirs("figs", exist_ok=True)
 plt.savefig("figs/numerical_vs_theoretical_f_k.png", dpi = 300, bbox_inches = "tight")
 plt.show()

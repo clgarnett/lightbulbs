@@ -1,3 +1,4 @@
+import os
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 from experiment import *
@@ -74,5 +75,6 @@ for i in range(num_plots):
 
 fig.suptitle(f"Results of tests B and C with sample size {num_experiments}", fontsize = 18, y = 1)
 plt.tight_layout()
+os.makedirs("figs", exist_ok=True)
 plt.savefig("figs/sim_theo_conf_B_and_C.png", dpi = 300, bbox_inches = "tight")
 plt.show()
